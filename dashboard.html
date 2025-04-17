@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Virtual Classroom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/dashboard.html">Virtual Classroom</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <span class="nav-link" id="teacherName"></span>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" id="logoutBtn">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>My Classrooms</h2>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createClassModal">
+                <i class="bi bi-plus-circle me-2"></i>Create New Classroom
+            </button>
+        </div>
+
+        <div class="row" id="classroomsList">
+            <!-- Classrooms will be dynamically added here -->
+        </div>
+    </main>
+
+    <!-- Create Classroom Modal -->
+    <div class="modal fade" id="createClassModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create New Classroom</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="createClassForm">
+                        <div class="mb-3">
+                            <label for="className" class="form-label">Class Name</label>
+                            <input type="text" class="form-control" id="className" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="gridSize" class="form-label">Grid Size</label>
+                            <select class="form-select" id="gridSize" required>
+                                <option value="4x4">4x4 (16 seats)</option>
+                                <option value="5x5">5x5 (25 seats)</option>
+                                <option value="6x6">6x6 (36 seats)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Create Classroom</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore-compat.js"></script>
+    <script src="/js/firebase-config.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

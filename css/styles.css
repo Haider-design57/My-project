@@ -1,0 +1,98 @@
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.display-4 {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.lead {
+    color: #34495e;
+}
+
+.list-unstyled li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.bi {
+    margin-right: 0.5rem;
+}
+
+.btn-primary {
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+/* Login Page Styles */
+.login-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Dashboard Styles */
+.class-card {
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Seating Layout Styles */
+.grid-container {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.seat {
+    background: #fff;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: move;
+    transition: all 0.2s;
+}
+
+.seat:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0,123,255,0.2);
+}
+
+.seat.occupied {
+    background: #e3f2fd;
+}
+
+.seat.present {
+    border-color: #28a745;
+    background: #d4edda;
+}
+
+.seat.absent {
+    border-color: #dc3545;
+    background: #f8d7da;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
